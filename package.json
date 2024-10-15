@@ -1,0 +1,23 @@
+{
+  "name": "printreceipt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src",
+    "start":"node src"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@point-of-sale/network-receipt-printer": "^2.0.0",
+    "@point-of-sale/receipt-printer-encoder": "^3.0.2",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13"
+  }
+}

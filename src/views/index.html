@@ -1,0 +1,23 @@
+<%- include('./partials/header.html') %>
+    <main class="flex justify-center">
+        <form action="/conectar" method="post" class="flex flex-col gap-2 shadow-lg rounded-xl border mt-4 p-4 w-1/2">
+            <header class="border-b text-2xl p-2">Configuracion de impresora</header>
+            <div class="flex flex-col">
+                <label for="">Ip de impresora</label>
+                <input type="text" name="ip_impresora" required class="border p-1 rounded-xl focus:border" name="" id="">
+            </div>
+            <div class="flex flex-col">
+                <label for="">Puerto</label>
+                <input type="text" name="puerto" value="9100" class="border p-1 rounded-xl" name="" id="">
+            </div>
+            <div class="flex flex-col">
+                <label for="">tercer Dato</label>
+                <input type="text" name="tercer_dato" class="border p-1 rounded-xl" name="" id="">
+            </div>
+            <div>
+                <button class="bg-sky-600 p-2 pl-4 pr-4 rounded-lg text-white hover:bg-sky-800">Conectar</button>
+            </div> 
+        </form>
+    </main>
+
+<%- include('./partials/footer.html') %>
