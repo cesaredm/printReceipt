@@ -20,6 +20,7 @@ class Print {
                 console.log('conected to printer', device)
                 return true
             })
+            return true
         } catch (error) {
             console.error('Error al conectar a la impresora:', error);
             return false
