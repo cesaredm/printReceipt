@@ -2,14 +2,19 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import ejs from 'ejs'
-import ReceiptPrinterEncoder from '@point-of-sale/receipt-printer-encoder'
-import NetworkReceiptPrinter from '@point-of-sale/network-receipt-printer'
 import { respuesta, respuestaError } from './helpers/tools.js'
 import { print } from './controllers/Print.js'
+import rutas from './routes/index.routes.js'
+import cors from 'cors'
+
+/*const express = require('express')
+const path = require('path')
+const ejs = require('ejs')
+const cors = require('cors')*/
+
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-
 const app = express()
 
 //configuraciones
@@ -22,29 +27,11 @@ app.set('view engine', 'ejs')
 //app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname + "/public")));
+app.use(cors())
 
-app.get('/', (req, res) => {
-    return res.render('index.html', respuesta({ message: 'aun sin configurar' }))
-})
-
-app.post('/conectar', async (req, res) => {
-    const datos = req.body;
-    try {
-        print.setHost(datos.ip_impresora, datos.puerto)
-        const isExito = await print.conectar()
-        if (isExito) return res.render('conexion.html', respuesta())
-        if (!isExito) return res.render('conexion.html', respuestaError())
-    } catch (error) {
-        console.log(error)
-        return res.render('conexion.html', respuestaError())
-    }
-})
-
-app.get('/test', async (req, res) => {
-    const isExito = await print.printTest()
-    if(isExito) res.send('Ticket impreso. con exito.')
-    if(!isExito) res.send('sucedio un error.')
-})
+// rutas
+app.use(rutas)
+//app.use(require('./routes/index.routes'))
 
 // Manejador de errores no controlados
 process.on('uncaughtException', (error) => {

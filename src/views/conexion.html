@@ -12,9 +12,14 @@
                 </header>
                 <section class="p-2">
                     <% if(status=='exito' ) { %>
+                        <p><b>Conexion con la impresora <%= printModel %> con exito</b></p>
                         <form action="/test" method="get">
                             <button class="bg-sky-600 p-2 pl-4 pr-4 rounded-lg text-white hover:bg-sky-800">Probar
                                 impresion</button>
+                        </form>
+                        <form action="/ticket" method="get">
+                            <button class="bg-sky-600 p-2 pl-4 pr-4 rounded-lg text-white hover:bg-sky-800">Probar
+                                impresion de ticket</button>
                         </form>
                         <% } %>
                             <% /* <form action="/test" method="get">

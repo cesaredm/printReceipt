@@ -1,6 +1,6 @@
 <%- include('./partials/header.html') %>
     <main class="flex justify-center">
-        <form action="/conectar" method="post" class="flex flex-col gap-2 shadow-lg rounded-xl border mt-4 p-4 w-1/2">
+        <form action="/conectar" method="post" class="flex flex-col gap-2 shadow-lg rounded-xl border mt-4 p-4 w-1/2" id="configuracion_inicial">
             <header class="border-b text-2xl p-2">Configuracion de impresora</header>
             <div class="flex flex-col">
                 <label for="">Ip de impresora</label>
@@ -15,7 +15,7 @@
                 <input type="text" name="tercer_dato" class="border p-1 rounded-xl" name="" id="">
             </div>
             <div>
-                <button class="bg-sky-600 p-2 pl-4 pr-4 rounded-lg text-white hover:bg-sky-800">Conectar</button>
+                <button class="bg-sky-600 p-2 pl-4 pr-4 rounded-lg text-white hover:bg-sky-800" id="conectar">Conectar</button>
             </div> 
         </form>
     </main>

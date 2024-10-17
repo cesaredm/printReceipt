@@ -12,3 +12,8 @@ export function respuestaError(data={}){
         message:'Operacion fallida.',
     }
 }
+
+/*module.exports = {
+    respuesta,
+    respuestaError
+}*/
